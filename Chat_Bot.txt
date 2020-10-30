@@ -1,0 +1,84 @@
+package chatbot;
+
+import java.awt.Color;
+
+import java.awt.event.ActionEvent;
+
+import java.awt.event.ActionListener;
+
+import javax.swing.*;
+
+   public class chatbot1 extends JFrame{ 
+
+		static JTextArea t1=new JTextArea();
+		static JTextField field=new JTextField();
+		
+		public static void main(String[] args) 
+		{
+			JFrame frame=new JFrame();
+			
+			frame.setVisible(true);
+			frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
+			frame.setSize(400,400);
+			frame.setLayout(null);
+			frame.setTitle("Chat Bot Made By 	Er.Pradeep Saini");
+			frame.add(field);
+			frame.add(t1);
+			t1.setLocation(1,1);
+			t1.setBackground(Color.green);
+			t1.setSize(400,300);
+			t1.setForeground(Color.blue);
+			field.setLocation(1,300);
+			field.setSize(400, 60);
+			field.setBackground(Color.blue);
+			field.setForeground(Color.white);
+			field.addActionListener(new ActionListener() {
+				
+				
+				@Override 
+				public void actionPerformed(ActionEvent  e) {
+					String  UserText = field.getText();
+					t1.append("User: = " +UserText+"\n");
+					field.setText("");
+					if(UserText.toLowerCase().contains("hi")) {
+						
+						t1.append("Google Assistent = Hello ! How Can I Help You  \n");
+					}
+					else if (UserText.toLowerCase().contains("how are you")) {
+						t1.append("Google Assistent = i am great and you ?\n");
+					}
+					
+					else if(UserText.toLowerCase().contains("good")) {
+						
+						t1.append("Google Assistent =  well \n");
+					}
+					else if(UserText.toLowerCase().contains("latest news covid-19?")) {
+						t1.append("Google Assistent = Coronavirus live updates: \n"
+								+ "Single-day spike of 83,883 new positive cases and 1,043\n"
+								+ " deaths reported \n"
+								+ "in India, in last 24 hrs\r\n" + 
+								"India's total case tally reached 38,53,406. Of thes\n"
+								+ " 8,155,38 are active cases, \n"
+								+ "2,970,492 patients have been discharged and\n "
+								+ "67,376 people have died. The country s\n"
+								+ "aw a record single-day jump of 83,883 cases on\n "
+								+ "Thursday. Stay with TOI for live updates: \n");
+					}
+					else if(UserText.toLowerCase().contains("what's your name")) {
+						t1.append("Google Assistent = my name is alexa  \n");
+					}
+					
+					else
+					{
+						t1.append("Google Assistent = what's are you  asking i couldn't getting your point \n");
+					}
+					
+				}
+				
+			});	
+		}
+   }
+
+			
+			
+	
